@@ -6,14 +6,14 @@
     <title>Blog Home Page</title>
 </head>
 <body>
-    The Official Blog home page
+    The Official Blog home page of {{username|capfirst|truncatechars:5}}
     {% if posts %}
         <h1>All posts available</h1>
         {% for post in posts %}
             <a href="/posts/{{post.id}}">
                 <h1> {{forloop.counter}} - {{post.title}}</h1>  <!-- forloop.counter returns the iteration number of the for loop, can be used for numbering -->
             </a>
-            <p>{{post.content}}</p>
+            <p>{{post.content|truncatewords:6}}</p>
         {% endfor %}
     {% else %}
         <h1>No post available!</h1>
