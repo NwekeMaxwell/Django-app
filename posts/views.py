@@ -58,3 +58,6 @@ def post(request, id):
 def redirectPostFn(request,id):
     url = reverse("post", args=[id])
     return HttpResponseRedirect(url)
+
+def globalPage(request):
+    return render(request, 'global.html')
