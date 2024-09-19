@@ -45,12 +45,13 @@ def post(request, id):
             break
     
     if valid_id:
-        html = f'''
-            <h1>{post_dict['title']}</h1>
-            <p>{post_dict['content']} </p>
-            <a href="/posts/home"> Back </a>
-        '''
-        return HttpResponse(html)
+        # html = f'''
+        #     <h1>{post_dict['title']}</h1>
+        #     <p>{post_dict['content']} </p>
+        #     <a href="/posts/home"> Back </a>
+        # '''
+        # return HttpResponse(html)
+        return render(request, 'posts/post.html', {'post':post_dict})
     else:
         return HttpResponseNotFound("Opps..Post not available!")
 
