@@ -33,8 +33,8 @@ def home(request):
                 <p> {post['content']}</p>
             </div>
         '''
-
-    return HttpResponse(html)
+    return render(request, 'home.html')
+    # return HttpResponse(html)
 
 def post(request, id):
     valid_id = False #lets use this boolean value to ensure we dont get an error page
