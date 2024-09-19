@@ -33,7 +33,7 @@ def home(request):
                 <p> {post['content']}</p>
             </div>
         '''
-    return render(request, 'home.html')
+    return render(request, 'posts/home.html')
     # return HttpResponse(html)
 
 def post(request, id):
