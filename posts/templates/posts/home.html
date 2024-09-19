@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{%load static %}
+{% comment %} {% block css %}
+    <link rel="stylesheet" href="{% static "posts/home.css" %}">
+{% endblock css %} {% endcomment %}
+
+
 {% block body %}
     The Official Blog home page of {{username|capfirst|truncatechars:5}}
     {% if posts %}
@@ -12,5 +18,11 @@
     {% else %}
         <h1>No post available!</h1>
     {% endif %}
+
+    <form method="POST" action='counter'>
+        {% csrf_token %}
+        <textarea name="text" rows="10" cols="50" placeholder="Text counter">  </textarea>
+        <input type="submit"/>
+    </form>
 {% endblock body %}
 

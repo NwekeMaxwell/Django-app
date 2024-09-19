@@ -1,5 +1,10 @@
 {% extends "base.html" %} 
 {% block title %} Post Page {% endblock title %}
+{%load static %}
+{% comment %} {% block css %}
+    <link rel="stylesheet" href="{% static "posts/post.css" %}">
+{% endblock css %} {% endcomment %}
+
 {% block body %}
     <h1>{{post.title}}</h1>
     <p>{{post.content}}</p>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect,Http404
 from django.urls import reverse
 # Create your views here. FBVs & CBVs
 
@@ -53,7 +53,8 @@ def post(request, id):
         # return HttpResponse(html)
         return render(request, 'posts/post.html', {'post':post_dict})
     else:
-        return HttpResponseNotFound("Opps..Post not available!")
+        raise Http404()
+        # return HttpResponseNotFound("Opps..Post not available!")
 
 def redirectPostFn(request,id):
     url = reverse("post", args=[id])
@@ -61,3 +62,8 @@ def redirectPostFn(request,id):
 
 def globalPage(request):
     return render(request, 'base.html')
+
+def counter(request):
+    text = request.POST['text']
+    num_of_words = len(text.split())
+    return render(request,"counter.html", {'amount':num_of_words})

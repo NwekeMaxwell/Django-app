@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include("posts.urls")),
     path('<int:id>/', views.redirectPostFn), #redirect users to posts when they directly modify the url path with integers
-    path('global/', views.globalPage)
+    path('global/', views.globalPage),
 ]
