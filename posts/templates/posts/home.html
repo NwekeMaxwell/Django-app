@@ -10,7 +10,7 @@
     {% if posts %}
         <h1>All posts available</h1>
         {% for post in posts %}
-            <a href="/posts/{{post.id}}">
+            <a href={% url 'post' post.id %}>
                 <h1> {{forloop.counter}} - {{post.title}}</h1>  <!-- forloop.counter returns the iteration number of the for loop, can be used for numbering -->
             </a>
             <p>{{post.content|truncatewords:6}}</p>
