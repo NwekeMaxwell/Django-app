@@ -60,4 +60,4 @@ def redirectPostFn(request,id):
     return HttpResponseRedirect(url)
 
 def globalPage(request):
-    return render(request, 'global.html')
+    return render(request, 'base.html')

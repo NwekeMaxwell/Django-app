@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Home Page</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block body %}
     The Official Blog home page of {{username|capfirst|truncatechars:5}}
     {% if posts %}
         <h1>All posts available</h1>
@@ -18,5 +12,5 @@
     {% else %}
         <h1>No post available!</h1>
     {% endif %}
-</body>
-</html>
+{% endblock body %}
+
